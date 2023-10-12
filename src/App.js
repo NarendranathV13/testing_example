@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Component1 from './components/Component1';
 
 function App() {
+  const details=[
+    {id: 1, user:"Naren", fulltime:true},
+    {id: 2, user:"Mohan", fulltime:false},
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {details.map((details)=>{
+        return(<Component1 details={details} />)
+      })}
     </div>
   );
 }
